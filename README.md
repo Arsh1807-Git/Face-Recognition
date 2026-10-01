@@ -6,12 +6,12 @@ and auto-registers new faces (name, age, gender) into a live Firebase
 
 ## Project Structure
 ```
-face_recognition_project/
+Face-Recognition/
+├── main.py             # Webcam loop, detection, matching, UI
+├── database.py         # All Firestore read/write logic
+├── firebase_config.py  # Firebase Admin SDK setup
 ├── requirements.txt
-├── firebase_config.py     # Firebase Admin SDK setup
-├── database.py            # All Firestore read/write logic
-├── main.py                # Webcam loop, detection, matching, UI
-├── serviceAccountKey.json # (you add this yourself — see Step 3)
+├── .gitignore
 └── README.md
 ```
 
@@ -43,16 +43,28 @@ sudo apt install cmake build-essential python3-dev
 ```bash
 cd face_recognition_project
 python -m venv venv
+```
 
-# activate it:
-venv\Scripts\activate      # Windows
-source venv/bin/activate   # macOS/Linux
+### Activate the virtual environment
 
+**Windows:**
+```bash
+venv\Scripts\activate
+```
+
+**macOS/Linux:**
+```bash
+source venv/bin/activate
+```
+
+### Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
-> `dlib` can take 5–15 minutes to compile the first time. This is normal.
-> If it fails on Windows, try: `pip install cmake` first, then retry.
 
+> `dlib` can take 5–15 minutes to compile the first time. This is normal.
+> If it fails on Windows, try `pip install cmake` first, then retry.
 ## Step 3: Set up Firebase (Firestore)
 
 1. Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.

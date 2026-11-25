@@ -104,12 +104,3 @@ people produce very different ones. `MATCH_TOLERANCE = 0.6` in
 you get false positives, raise it slightly if the same person isn't
 being recognized consistently.
 
-## Possible improvements (good talking points if this is a resume project)
-
-- Add a simple GUI (Tkinter/PyQt) instead of terminal `input()` for
-  registering new faces.
-- Store a cropped face photo in Firebase Storage alongside the record.
-- Add a "confidence score" display next to recognized names.
-- Deploy as a small Flask/FastAPI web app with a live video stream
-  instead of a local OpenCV window, so it can run on a server.
-- Add authentication so only authorized users can view stored records.
